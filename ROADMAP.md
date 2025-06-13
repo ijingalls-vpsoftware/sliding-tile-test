@@ -1,13 +1,13 @@
 # Roadmap / TODO
 
 ## MVP Goals
-- [ ] Basic Tkinter GUI
-- [ ] Upload image and slice into tiles
-- [ ] Solvable shuffle logic
-- [ ] Mouse-based tile movement
-- [ ] Keyboard arrow controls
-- [ ] Win detection
-- [ ] Move counter
+- [x] Basic Tkinter GUI
+- [x] Upload image and slice into tiles
+- [x] Solvable shuffle logic
+- [x] Mouse-based tile movement
+- [x] Keyboard arrow controls
+- [x] Win detection
+- [x] Move counter
 
 ## Polishing
 - [ ] Win screen with restart option
