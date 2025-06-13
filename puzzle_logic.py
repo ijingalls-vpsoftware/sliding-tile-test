@@ -51,20 +51,14 @@ class Puzzle:
         return False
 
     def shuffled(self) -> None:
-        """Shuffle tiles into a random, solvable state with blank bottom-right."""
+        """Shuffle tiles into a random, solvable state."""
         arr = list(range(self.tile_count))
-        blank_id = self.tile_count - 1
         while True:
             random.shuffle(arr)
-            # Move blank tile to the last position so the game always starts
-            # with the empty space in the bottom-right corner
-            blank_pos = arr.index(blank_id)
-            arr[blank_pos], arr[-1] = arr[-1], arr[blank_pos]
             if self.is_solvable(arr) and arr != list(range(self.tile_count)):
                 break
         self.tiles = arr
-        # Blank should always be at the last index
-        self.blank = self.tile_count - 1
+        self.blank = arr.index(self.tile_count - 1)
         self.moves = 0
 
     def inversions(self, arr: List[int]) -> int:
