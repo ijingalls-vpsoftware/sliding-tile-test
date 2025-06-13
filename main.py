@@ -65,16 +65,14 @@ class PuzzleGUI:
             self.buttons.clear()
         for i in range(GRID_SIZE ** 2):
             img = (
-                self.tile_imgs[self.puzzle.tiles[i]]
-                if self.puzzle.tiles[i] != self.puzzle.blank
-                else self.empty_img
+                self.empty_img if i == self.puzzle.blank else self.tile_imgs[self.puzzle.tiles[i]]
             )
             btn = tk.Button(
                 self.board,
                 command=lambda idx=i: self.on_click(idx),
                 image=img,
             )
-            if self.puzzle.tiles[i] == self.puzzle.blank:
+            if i == self.puzzle.blank:
                 btn.config(state=tk.DISABLED)
             btn.grid(row=i // GRID_SIZE, column=i % GRID_SIZE)
             self.buttons.append(btn)
@@ -83,7 +81,7 @@ class PuzzleGUI:
     def update_board(self) -> None:
         for i, btn in enumerate(self.buttons):
             tile_index = self.puzzle.tiles[i]
-            if tile_index == self.puzzle.blank:
+            if i == self.puzzle.blank:
                 btn.config(image=self.empty_img, state=tk.DISABLED)
             else:
                 btn.config(image=self.tile_imgs[tile_index], state=tk.NORMAL)

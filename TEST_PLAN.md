@@ -7,7 +7,7 @@
 
 ## Tile Display
 - [ ] Check that 15 picture tiles plus one blank tile are visible and correctly spaced.
-- [ ] Ensure bottom-right tile shows a gray placeholder tile instead of empty space.
+- [ ] Ensure the blank tile shows a gray placeholder image instead of empty space.
 
 ## Tile Movement
 - [ ] Click to move adjacent tile – should slide.

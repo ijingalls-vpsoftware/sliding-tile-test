@@ -16,6 +16,7 @@ class Puzzle:
     def reset(self) -> None:
         """Initialize puzzle in solved state."""
         self.tiles: List[int] = list(range(self.tile_count))
+        # ``blank`` stores the **index position** of the empty tile
         self.blank = self.tile_count - 1
         self.moves = 0
 
@@ -57,7 +58,7 @@ class Puzzle:
             if self.is_solvable(arr) and arr != list(range(self.tile_count)):
                 break
         self.tiles = arr
-        self.blank = self.tiles.index(self.tile_count - 1)
+        self.blank = arr.index(self.tile_count - 1)
         self.moves = 0
 
     def inversions(self, arr: List[int]) -> int:
